@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth2.Demo", "OAuth2.Demo\OAuth2.Demo.csproj", "{6495136A-62CA-42F7-9E01-4FCE0214C3F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuth2.Demo.Tests", "OAuth2.Demo.Tests\OAuth2.Demo.Tests.csproj", "{CCE694F7-8875-49CE-952C-78C40004FAFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6495136A-62CA-42F7-9E01-4FCE0214C3F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6495136A-62CA-42F7-9E01-4FCE0214C3F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6495136A-62CA-42F7-9E01-4FCE0214C3F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6495136A-62CA-42F7-9E01-4FCE0214C3F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCE694F7-8875-49CE-952C-78C40004FAFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCE694F7-8875-49CE-952C-78C40004FAFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCE694F7-8875-49CE-952C-78C40004FAFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCE694F7-8875-49CE-952C-78C40004FAFF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
