@@ -142,7 +142,7 @@ namespace OAuth2.Demo.Providers
         /// </summary>
         public override async Task ValidateTokenRequest(OAuthValidateTokenRequestContext context)
         {
-            if (context.TokenRequest.IsAuthorizationCodeGrantType || context.TokenRequest.IsRefreshTokenGrantType)
+            if (context.TokenRequest.IsAuthorizationCodeGrantType || context.TokenRequest.IsRefreshTokenGrantType || context.TokenRequest.IsResourceOwnerPasswordCredentialsGrantType)
             {
                 context.Validated();
             }
