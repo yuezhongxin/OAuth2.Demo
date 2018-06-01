@@ -10,6 +10,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace OAuth2.Demo
@@ -31,6 +32,35 @@ namespace OAuth2.Demo
                 RefreshTokenProvider = new OpenRefreshTokenProvider() //refresh_token 认证服务
             };
             app.UseOAuthBearerTokens(OAuthOptions); //表示 token_type 使用 bearer 方式
+
+            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions()
+            {
+                //从url中获取token，兼容hearder方式
+                Provider = new QueryStringOAuthBearerProvider("access_token")
+            });
         }
     }
+
+    public class QueryStringOAuthBearerProvider : OAuthBearerAuthenticationProvider
+    {
+        readonly string _name;
+
+        public QueryStringOAuthBearerProvider(string name)
+        {
+            _name = name;
+        }
+
+        public override Task RequestToken(OAuthRequestTokenContext context)
+        {
+            var value = context.Request.Query.Get(_name);
+
+            if (!string.IsNullOrEmpty(value))
+            {
+                context.Token = value;
+            }
+
+            return Task.FromResult<object>(null);
+        }
+    }
+
 }
